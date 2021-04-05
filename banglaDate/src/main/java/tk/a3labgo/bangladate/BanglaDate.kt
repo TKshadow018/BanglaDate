@@ -46,8 +46,8 @@ class BanglaDate {
             val currentDate = Calendar.getInstance().get(Calendar.DAY_OF_MONTH).toString();
             var banglaSting = ""
             for (i in currentDate.indices) {
-                val temp = (currentDate.get(i)).toInt()
-                val bangleChar = banglaNumbers[temp]
+                val temp = (currentDate.get(i))
+                val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
                 banglaSting += bangleChar
             }
             return banglaSting
@@ -56,8 +56,8 @@ class BanglaDate {
             val currentYear = Calendar.getInstance().get(Calendar.YEAR).toString();
             var banglaSting = ""
             for (i in currentYear.indices) {
-                val temp = (currentYear.get(i)).toInt()
-                val bangleChar = banglaNumbers[temp]
+                val temp = (currentYear.get(i))
+                val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
                 banglaSting += bangleChar
             }
             return banglaSting
@@ -66,8 +66,8 @@ class BanglaDate {
             var banglaSting = ""
             val currentMonth = Calendar.getInstance().get(Calendar.MONTH).toString();
             for (i in currentMonth.indices) {
-                val temp = (currentMonth.get(i)).toInt()
-                val bangleChar = banglaMonths[temp]
+                val temp = (currentMonth.get(i))
+                val bangleChar = banglaMonths[Integer.valueOf(temp.toString())]
                 banglaSting += bangleChar
             }
             return banglaSting
@@ -121,18 +121,18 @@ private fun banglaDateFormater(format: String, divider1: String, divider2: Strin
     var banglaYear = ""
     var finalDate = ""
     for (i in currentDate.indices) {
-        val temp = (currentDate.get(i)).toInt()
-        val bangleChar = banglaNumbers[temp]
+        val temp = (currentDate.get(i))
+        val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
         banglaDate += bangleChar
     }
     for (i in currentMonth.indices) {
-        val temp = (currentMonth.get(i)).toInt()
-        val bangleChar = banglaMonths[temp]
+        val temp = (currentMonth.get(i))
+        val bangleChar = banglaMonths[Integer.valueOf(temp.toString())]
         banglaMonth += bangleChar
     }
     for (i in currentYear.indices) {
-        val temp = (currentYear.get(i)).toInt()
-        val bangleChar = banglaNumbers[temp]
+        val temp = (currentYear.get(i))
+        val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
         banglaYear += bangleChar
     }
     when(format){

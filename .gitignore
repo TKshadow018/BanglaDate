@@ -31,8 +31,6 @@ app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png
 app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
 banglaDate/src/main/res/values/strings.xml
 banglaDate/src/test/java/tk/a3labgo/bangladate/ExampleUnitTest.kt
-gradle/wrapper/gradle-wrapper.jar
-gradle/wrapper/gradle-wrapper.properties
 app/proguard-rules.pro
 app/src/androidTest/java/tk/a3labgo/bangladate/ExampleInstrumentedTest.kt
 app/src/main/AndroidManifest.xml

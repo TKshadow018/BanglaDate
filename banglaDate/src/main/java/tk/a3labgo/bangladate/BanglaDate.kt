@@ -1,4 +1,5 @@
 package tk.a3labgo.bangladate
+import java.lang.Exception
 import java.util.*
 
 class BanglaDate {
@@ -27,7 +28,7 @@ class BanglaDate {
             "শুক্রবার",
             "শনিবার"
         )
-        public fun getBanglaDayOfWeek():String{
+        fun getBanglaDayOfWeek():String{
             val dayOfTheWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
             var day = ""
             when(dayOfTheWeek){
@@ -42,7 +43,127 @@ class BanglaDate {
             return day
         }
 
-        public fun getBanglaDate(): String {
+        fun getBanglaNumber(inputedNumber: Long): String? {
+            try {
+                val banglaNumbers = arrayOf("০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯");
+                val stringedInputedNumber = inputedNumber.toString();
+                var banglaSting = ""
+                for (i in stringedInputedNumber.indices) {
+                    val temp = (stringedInputedNumber.get(i))
+                    val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
+                    banglaSting += bangleChar
+                }
+                return banglaSting
+            }
+            catch (e:Exception){
+                return null
+            }
+        }
+        fun getEnglishNumber(inputedNumber: String): Long? {
+            val banglaNumbers = arrayOf("০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯");
+            var numberInSting = ""
+            try {
+                for (i in inputedNumber.indices) {
+                    val temp = banglaNumbers.indexOf(inputedNumber[i].toString())
+                    numberInSting += banglaNumbers[temp]
+                }
+                return numberInSting.toLong()
+            } catch (e:Exception){
+                return null
+            }
+        }
+        fun addBanglaNumbers(inputedNumbers: List<String>): String?{
+            var totalNumber: Long = 0
+            try {
+                for (i in inputedNumbers.indices) {
+                    val temp = getEnglishNumber(inputedNumbers[i])
+                    if(temp != null){
+                        totalNumber += temp
+                    } else{
+                        return null
+                    }
+                }
+                return getBanglaNumber(totalNumber)
+            } catch (e: Exception){
+                return null
+            }
+        }
+        fun addBanglaNumbers(inputedNumbers: Array<String>): String?{
+            var totalNumber: Long = 0
+            var totalNumberBangla: String? = ""
+            try {
+                for (i in inputedNumbers.indices) {
+                    val temp = getEnglishNumber(inputedNumbers[i])
+                    if(temp != null){
+                        totalNumber += temp
+                    } else{
+                        return null
+                    }
+                }
+                totalNumberBangla = getBanglaNumber(totalNumber)
+                return totalNumberBangla
+            } catch (e: Exception){
+                return null
+            }
+        }
+        fun addBanglaNumbers(num1:String,num2:String): String?{
+            try {
+                val n1 = getEnglishNumber(num1)
+                val n2 = getEnglishNumber(num2)
+                if (n1!=null && n2 !=null){
+                    val total = n1.plus(n2)
+                    return getBanglaNumber(total)
+                } else{
+                    return null
+                }
+            } catch (e:Exception){
+                return null
+            }
+        }
+        fun substractBanglaNumbers(num1:String,num2:String): String?{
+            try {
+                val n1 = getEnglishNumber(num1)
+                val n2 = getEnglishNumber(num2)
+                if (n1!=null && n2 !=null){
+                    val total = n1.minus(n2)
+                    return getBanglaNumber(total)
+                } else{
+                    return null
+                }
+            } catch (e:Exception){
+                return null
+            }
+        }
+        fun multiplyBanglaNumbers(num1:String,num2:String): String?{
+            try {
+                val n1 = getEnglishNumber(num1)
+                val n2 = getEnglishNumber(num2)
+                if (n1!=null && n2 !=null){
+                    val total = n1*n2
+                    return getBanglaNumber(total)
+                } else{
+                    return null
+                }
+            } catch (e:Exception){
+                return null
+            }
+        }
+        fun divideBanglaNumbers(dividend:String,divisor:String): String?{
+            try {
+                val n1 = getEnglishNumber(dividend)
+                val n2 = getEnglishNumber(divisor)
+                if (n1!=null && n2 !=null){
+                    val total = n1/n2
+                    return getBanglaNumber(total)
+                } else{
+                    return null
+                }
+            } catch (e:Exception){
+                return null
+            }
+        }
+
+        fun getBanglaDate(): String {
             val currentDate = Calendar.getInstance().get(Calendar.DAY_OF_MONTH).toString();
             var banglaSting = ""
             for (i in currentDate.indices) {
@@ -52,7 +173,7 @@ class BanglaDate {
             }
             return banglaSting
         }
-        public fun getBanglaYear(): String {
+        fun getBanglaYear(): String {
             val currentYear = Calendar.getInstance().get(Calendar.YEAR).toString();
             var banglaSting = ""
             for (i in currentYear.indices) {
@@ -62,7 +183,7 @@ class BanglaDate {
             }
             return banglaSting
         }
-        public fun getBanglaMonth(): String {
+        fun getBanglaMonth(): String {
             var banglaSting = ""
             val currentMonth = Calendar.getInstance().get(Calendar.MONTH).toString();
             for (i in currentMonth.indices) {
@@ -73,16 +194,16 @@ class BanglaDate {
             return banglaSting
         }
 
-        public fun getFullDate() :String{
+        fun getFullDate() :String{
             return banglaDateFormater("dmy", ",", "/")
         }
-        public fun getFullDate(format: String) :String{
+        fun getFullDate(format: String) :String{
             return banglaDateFormater(format, ",", "/")
         }
-        public fun getFullDate(format: String, divider: String) :String{
+        fun getFullDate(format: String, divider: String) :String{
             return banglaDateFormater(format, divider, divider)
         }
-        public fun getFullDate(format: String, dividerOne: String, dividerTwo: String) :String{
+        fun getFullDate(format: String, dividerOne: String, dividerTwo: String) :String{
             return banglaDateFormater(format, dividerOne, dividerTwo)
         }
     }

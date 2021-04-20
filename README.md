@@ -30,6 +30,8 @@ implementation 'com.github.TKshadow018:BanglaDate:0.1)`
 4. substractBanglaNumbers(String,String)
     Example-> 
        substractBanglaNumbers("৬","৫")
+       
+       `returns "১১"`
 
 5. multiplyBanglaNumbers(String,String)
     Example-> 

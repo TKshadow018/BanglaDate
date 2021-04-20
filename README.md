@@ -1,7 +1,9 @@
 # BanglaDate
 Get Number or Date in Bangla and also do basic math operation in Bangla using this library
 
-`implementation 'com.github.TKshadow018:BanglaDate:0.1)`
+```groovy
+implementation 'com.github.TKshadow018:BanglaDate:0.1)`
+```
 
 1. getBanglaNumber(long):String?
     Example-> 
@@ -28,8 +30,6 @@ Get Number or Date in Bangla and also do basic math operation in Bangla using th
 4. substractBanglaNumbers(String,String)
     Example-> 
        substractBanglaNumbers("৬","৫")
-
-       `returns "১১"`
 
 5. multiplyBanglaNumbers(String,String)
     Example-> 

@@ -7,14 +7,14 @@ Get Number or Date in Bangla and also do basic math operation in Bangla using th
     Example-> 
       getBanglaNumber(5) 
 
-      returns ৫
+      `returns ৫`
 
 
 2. getEnglishNumber(String):Long?
     Example-> 
       getEnglishNumber("৫") 
 
-      returns 5
+      `returns 5`
 
 
 3. addBanglaNumbers(List<Sting> or Array<String> or String,String)
@@ -23,23 +23,23 @@ Get Number or Date in Bangla and also do basic math operation in Bangla using th
       addBanglaNumbers(arrayOf("৫","৬")) or
       addBanglaNumbers(arrayListOf("৫","৬"))
 
-      returns "১১"
+      `returns "১১"`
   
 4. substractBanglaNumbers(String,String)
     Example-> 
        substractBanglaNumbers("৬","৫")
 
-       returns "১১"
+       `returns "১১"`
 
 5. multiplyBanglaNumbers(String,String)
     Example-> 
       multiplyBanglaNumbers("৫","২")
 
-      returns "১০"
+      `returns "১০"`
 
 6. divideBanglaNumbers(String,String)
     Example-> 
       divideBanglaNumbers("৬","২")
 
-      returns "৩"
+      `returns "৩"`
       

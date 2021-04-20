@@ -27,3 +27,33 @@ implementation 'com.github.TKshadow018:BanglaDate:0.1)`
 
       `returns "১১"`
       
+4. substractBanglaNumbers(String,String)
+    Example-> 
+       substractBanglaNumbers("৬","৫")
+       
+      `returns "১১"`
+
+5. multiplyBanglaNumbers(String,String)
+    Example-> 
+      multiplyBanglaNumbers("৫","২")
+
+      `returns "১০"`
+
+6. divideBanglaNumbers(String,String)
+    Example-> 
+      divideBanglaNumbers("৬","২")
+
+      `returns "৩"`
+      
+7. getBanglaDate()
+
+      `returns "৩"` if todays date is 3
+      
+8. getBanglaMonth()
+
+      `returns "৩"` if current month is march
+      
+9. getBanglaYear()
+
+      `returns "২০২২"` if current year is 2022
+      

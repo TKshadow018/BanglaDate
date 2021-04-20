@@ -26,22 +26,4 @@ implementation 'com.github.TKshadow018:BanglaDate:0.1)`
       addBanglaNumbers(arrayListOf("৫","৬"))
 
       `returns "১১"`
-  
-4. substractBanglaNumbers(String,String)
-    Example-> 
-       substractBanglaNumbers("৬","৫")
-       
-       `returns "১১"`
-
-5. multiplyBanglaNumbers(String,String)
-    Example-> 
-      multiplyBanglaNumbers("৫","২")
-
-      `returns "১০"`
-
-6. divideBanglaNumbers(String,String)
-    Example-> 
-      divideBanglaNumbers("৬","২")
-
-      `returns "৩"`
       

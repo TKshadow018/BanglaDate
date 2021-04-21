@@ -99,11 +99,11 @@ Step 2. Add the dependency
       
         `returns ২১ এপ্রিল ২০২১ ইং ১৬:৪০:৫৮.০৯৭৩`
 	
-     * getFullDate(dd MMMM yyyy E hh:mm:ss)
+     * getFullDate("dd MMMM yyyy E hh:mm:ss")
       
         `returns ২১ এপ্রিল ২০২১ ইং ১৬:৪০:৫৮`
 
-     * getFullDate(dd/MM/yyyy G)
+     * getFullDate("dd/MM/yyyy G")
       
         `returns ২১/৩/২০২১ খ্রিষ্টাব্দ`
 	

@@ -408,4 +408,17 @@ class BanglaDate {
         }
         return banglaSting
     }
-    private fun formatExtractor(format: String): ArrayList<String>? { return ArrayList<String>() }
+private fun formatExtractor(format: String): ArrayList<String>? {
+    val formats = ArrayList<String>()
+    var chunkString = ""
+    for (i in 0 until format.length) {
+        if (i + 1 < format.length && format[i] == format[i + 1]) {
+            chunkString += format[i]
+        } else {
+            chunkString += format[i]
+            formats.add(chunkString)
+            chunkString = ""
+        }
+    }
+    return formats
+}

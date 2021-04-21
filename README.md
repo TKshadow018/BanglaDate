@@ -110,6 +110,40 @@ Step 2. Add the dependency
     * getFullDate("dd/MM/yy hh:mm")
       
         `returns ২১/০৩/২১ ০৫:৫৯`
+	
+## Date Formats
+| Format | Return |
+| --- | --- |
+| yy | current year last two digit |
+| yyyy | current year 4 digit |
+| M | current month in number(1 or 2 digit) |
+| L | current month in number(1 or 2 digit) |
+| MM | current month in number(2 digit) |
+| LL | current month in number(2 digit) |
+| MMM | current month in string(1st 2 character) |
+| LLL | current month in string(1st 2 character) |
+| MMMM | current month in string |
+| LLLL | current month in string |
+| d | current date in month(1 or 2 digit) |
+| dd | current date in month(2 digit) |
+| G | খ্রিষ্টাব্দ |
+| E | ইং |
+| EE | ইংরেজী |
+| h | Hour in am/pm (1-12)(1 or 2 digit) |
+| hh | Hour in am/pm (1-12)(2 digit) |
+| k | Hour in day (1-24)(1 or 2 digit) |
+| kk | Hour in day (1-24)(2 digit) |
+| H | current hour in 24 hour clock(1 or 2 digit) |
+| HH | current hour in 24 hour clock(2 digit) |
+| K | Hour in am/pm (0-11)(1 or 2 digit) |
+| KK | Hour in am/pm (0-11)(2 digit) |
+| m | minute in (1 or 2 digit) |
+| mm | minute in (2 digit) |
+| s | second in (1 or 2 digit) |
+| ss | second in (2 digit) |
+| S | mili second in (1 digit) |
+| SS | mili second in (2 digit) |
+| SSS | mili second in (3 digit) |
        
      
       

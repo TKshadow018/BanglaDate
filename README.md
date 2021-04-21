@@ -97,28 +97,21 @@ Step 2. Add the dependency
     Example-> 
      * getFullDate()
       
-        `returns ২০,এপ্রিল ২০২১`
-       
-     * getFullDate("dmy",",")
+        `returns ২১ এপ্রিল ২০২১ ইং ১৬:৪০:৫৮.০৯৭৩`
+	
+     * getFullDate(dd MMMM yyyy E hh:mm:ss)
       
-       `returns ২০,এপ্রিল,২০২১`
-       
-     * getFullDate("dmy",","," ")
+        `returns ২১ এপ্রিল ২০২১ ইং ১৬:৪০:৫৮`
+
+     * getFullDate(dd/MM/yyyy G)
       
-       `returns ২০,এপ্রিল ২০২১`
-       
-     * getFullDate("dmy","/","/")
+        `returns ২১/৩/২০২১ খ্রিষ্টাব্দ`
+	
+    * getFullDate("dd/MM/yy hh:mm")
       
-       `returns ২০/এপ্রিল/২০২১`
+        `returns ২১/০৩/২১ ০৫:৫৯`
        
-     * getFullDate("dmy"," "," ")
-      
-       `returns ২০ এপ্রিল ২০২১`
-       
-     * getFullDate("ydm",", "," ")
-      
-       `returns ২০২১, ২০এপ্রিল`
-    
+     
       
 ## Contribution :collision:
 

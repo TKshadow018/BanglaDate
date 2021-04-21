@@ -36,7 +36,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
     dependencies {
-         'com.github.TKshadow018:ShowCaseView:1.1.1'
+         'com.github.TKshadow018:BanglaDate:ae0d5d6651'
     }
 
 ## How To Use

@@ -182,11 +182,11 @@ class BanglaDate {
             }
             return banglaSting
         }
-        fun getFullDate() :String{
-            return banglaDateFormater("dd mm yy")
-        }
         fun getFullDate(format: String) :String{
             return banglaDateFormater(format)
+        }
+        fun getFullDate() :String{
+            return banglaDateFormater("dd MMMM yyyy E hh:mm:ss.SSS")
         }
     }
 }
@@ -303,21 +303,29 @@ class BanglaDate {
                 "E" -> finalDate += "ইং"
                 "EE" -> finalDate += "ইংরেজী"
                 "H", "K", "h", "k" -> {
-                    var hour24hrsLong = ""
-                    var hour12hrsLong = ""
-                    var hour24hrsLongPlusOne = ""
-                    var hour12hrsLongPlusOne = ""
+                    var hour24hrsLong:String?
+                    var hour12hrsLong:String?
+                    var hour24hrsLongPlusOne:String?
+                    var hour12hrsLongPlusOne:String?
                     if (hour24hrs?.length == 1) {
                         hour24hrsLong = banglaNumbers[0] + hour24hrs
+                    }else{
+                        hour24hrsLong = hour24hrs
                     }
                     if (hour12hrs?.length == 1) {
                         hour12hrsLong = banglaNumbers[0] + hour12hrs
+                    }else{
+                        hour12hrsLong = hour12hrs
                     }
                     if (hour24hrsPlusOne?.length == 1) {
                         hour24hrsLongPlusOne = banglaNumbers[0] + hour24hrsPlusOne
+                    }else{
+                        hour24hrsLongPlusOne = hour24hrsPlusOne
                     }
                     if (hour12hrsPlusOne?.length == 1) {
                         hour12hrsLongPlusOne = banglaNumbers[0] + hour12hrsPlusOne
+                    }else{
+                        hour12hrsLongPlusOne = hour12hrsPlusOne
                     }
                     when (i) {
                         "H" -> finalDate += hour24hrs

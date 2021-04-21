@@ -111,6 +111,12 @@ Step 2. Add the dependency
       
         `returns ২১/০৩/২১ ০৫:৫৯`
 	
+    * getFullDate("dd/MM/yy a KK:mm")
+
+        `২১/০৩/২১ সন্ধ্যা ০৫:৩৬`
+	
+	
+	
 ## Date Formats
 | Format | Return |
 | --- | --- |
@@ -144,6 +150,7 @@ Step 2. Add the dependency
 | S | mili second in (1 digit) |
 | SS | mili second in (2 digit) |
 | SSS | mili second in (3 digit) |
+| a | part of day (ভোর, সকাল, দুপুর, সন্ধ্যা, রাত) |
        
      
       

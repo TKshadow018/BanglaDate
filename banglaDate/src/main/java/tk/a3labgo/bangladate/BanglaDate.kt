@@ -391,6 +391,26 @@ class BanglaDate {
                             }
                         }
                     }
+                    "a"->{
+                        println(calendar[Calendar.HOUR_OF_DAY])
+                        when {
+                            calendar[Calendar.HOUR_OF_DAY]<6 -> {
+                                finalDate += "ভোর"
+                            }
+                            calendar[Calendar.HOUR_OF_DAY]<12 -> {
+                                finalDate += "সকাল"
+                            }
+                            calendar[Calendar.HOUR_OF_DAY]<17 -> {
+                                finalDate += "দুপুর"
+                            }
+                            calendar[Calendar.HOUR_OF_DAY]<20 -> {
+                                finalDate += "সন্ধ্যা"
+                            }
+                            calendar[Calendar.HOUR_OF_DAY]<24 -> {
+                                finalDate += "রাত"
+                            }
+                        }
+                    }
                     else ->finalDate += i
                 }
             }

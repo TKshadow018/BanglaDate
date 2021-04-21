@@ -191,87 +191,92 @@ class BanglaDate {
     }
 }
     private fun banglaDateFormater(format: String) :String{
-        val banglaNumbers = arrayOf("০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯");
-        val banglaMonths = arrayOf(
-            "জানুয়ারী",
-            "ফেব্রুয়ারী",
-            "মার্চ",
-            "এপ্রিল",
-            "মে",
-            "জুন",
-            "জুলাই",
-            "আগস্ট",
-            "সেপ্টেম্বর",
-            "অক্টোবর",
-            "নভেম্বর",
-            "ডিসেম্বর"
-        )
-        val banglaDays = arrayOf(
-            "শনিবার",
-            "সোমবার",
-            "রবিবার",
-            "মঙ্গলবার",
-            "বুধবার",
-            "বৃহস্পতিবার",
-            "শুক্রবার"
-        )
-        val calendar = Calendar.getInstance()
+    var banglaDay = ""
+    var banglaDayTwoChar = ""
 
-        var banglaDay = ""
-        var banglaDayTwoChar = ""
-        var banglaDateSingleDigit = ""
-        var banglaDateDoubleDigit = ""
-        var banglaMonthDoubleDigitNumber = ""
-        var banglaMonthFullString = ""
-        var banglaMonthTwoCharString = ""
-        var banglaYearFourDigit = ""
-        var banglaYearLastTwoDigit = ""
-        var finalDate = ""
+    var banglaDateSingleDigit = ""
+    var banglaDateDoubleDigit = ""
 
-        val currentYear = calendar.get(Calendar.YEAR).toString()
-        val currentDate = calendar.get(Calendar.DAY_OF_MONTH).toString()
-        val currentMonth = calendar.get(Calendar.MONTH).toString()
-        val currentDay = calendar.get(Calendar.DAY_OF_WEEK)
-        val hour24hrs = getBanglaNumberPrivate(calendar[Calendar.HOUR_OF_DAY].toLong())
-        val hour12hrs = getBanglaNumberPrivate(calendar[Calendar.HOUR].toLong())
-        val hour24hrsPlusOne = getBanglaNumberPrivate(calendar[Calendar.HOUR_OF_DAY].toLong()+1)
-        val hour12hrsPlusOne = getBanglaNumberPrivate(calendar[Calendar.HOUR].toLong()+1)
-        val minutes = getBanglaNumberPrivate(calendar[Calendar.MINUTE].toLong())
-        val seconds = getBanglaNumberPrivate(calendar[Calendar.SECOND].toLong())
-        val miliSeconds = getBanglaNumberPrivate(calendar[Calendar.MILLISECOND].toLong())
+    var banglaMonthDoubleDigitNumber = ""
+    var banglaMonthFullString = ""
+    var banglaMonthTwoCharString = ""
 
-        var banglaMonthSingleCharNumber = getBanglaNumberPrivate(
-            Calendar.getInstance().get(Calendar.MONTH).toLong() + 1
-        )
+    var banglaYearFourDigit = ""
+    var banglaYearLastTwoDigit = ""
 
-        for (i in currentDate.indices) {
-            val temp = (currentDate[i])
-            val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
-            banglaDateSingleDigit += bangleChar
-        }
-        for (i in currentMonth.indices) {
-            val temp = (currentMonth[i])
-            banglaMonthFullString += banglaMonths[Integer.valueOf(temp.toString())]
-        }
-        for (i in currentYear.indices) {
-            val temp = (currentYear[i])
-            val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
-            banglaYearFourDigit += bangleChar
-        }
-        banglaMonthDoubleDigitNumber = getBanglaNumberPrivate(currentMonth.toLong())!!
-        banglaDay = banglaDays[currentDay - 1]
-        if(banglaDateSingleDigit.length==1){
-            banglaDateDoubleDigit = banglaNumbers[0]+banglaDateSingleDigit
-        }else{
-            banglaDateDoubleDigit = banglaDateSingleDigit
-        }
-        if(banglaMonthSingleCharNumber?.length==1){
-            banglaMonthTwoCharString = banglaNumbers[0]+banglaMonthSingleCharNumber
-        }else if(banglaMonthSingleCharNumber?.length==2){
-            banglaMonthTwoCharString = banglaMonthSingleCharNumber
-        }
 
-        val arreyedFormat = arrayOf("dd","-","MM","-","yyyy"," ","G"," ","hh",":","mm",":","ss",":","SSS")
+    var finalDate = ""
+
+    val banglaNumbers = arrayOf("০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯");
+    val banglaMonths = arrayOf(
+        "জানুয়ারী",
+        "ফেব্রুয়ারী",
+        "মার্চ",
+        "এপ্রিল",
+        "মে",
+        "জুন",
+        "জুলাই",
+        "আগস্ট",
+        "সেপ্টেম্বর",
+        "অক্টোবর",
+        "নভেম্বর",
+        "ডিসেম্বর"
+    )
+    val banglaDays = arrayOf(
+        "শনিবার",
+        "সোমবার",
+        "রবিবার",
+        "মঙ্গলবার",
+        "বুধবার",
+        "বৃহস্পতিবার",
+        "শুক্রবার"
+    )
+    val calendar = Calendar.getInstance()
+    val currentYear = calendar.get(Calendar.YEAR).toString()
+    val currentDate = calendar.get(Calendar.DAY_OF_MONTH).toString()
+    val currentMonth = calendar.get(Calendar.MONTH).toString()
+    val currentDay = calendar.get(Calendar.DAY_OF_WEEK)
+    val hour24hrs = getBanglaNumberPrivate(calendar[Calendar.HOUR_OF_DAY].toLong())
+    val hour12hrs = getBanglaNumberPrivate(calendar[Calendar.HOUR].toLong())
+    val hour24hrsPlusOne = getBanglaNumberPrivate(calendar[Calendar.HOUR_OF_DAY].toLong() + 1)
+    val hour12hrsPlusOne = getBanglaNumberPrivate(calendar[Calendar.HOUR].toLong() + 1)
+    val minutes = getBanglaNumberPrivate(calendar[Calendar.MINUTE].toLong())
+    val seconds = getBanglaNumberPrivate(calendar[Calendar.SECOND].toLong())
+    val miliSeconds = getBanglaNumberPrivate(calendar[Calendar.MILLISECOND].toLong())
+
+    var banglaMonthSingleCharNumber = getBanglaNumberPrivate(
+        Calendar.getInstance().get(Calendar.MONTH).toLong() + 1
+    )
+
+    for (i in currentDate.indices) {
+        val temp = (currentDate[i])
+        val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
+        banglaDateSingleDigit += bangleChar
+    }
+    for (i in currentMonth.indices) {
+        val temp = (currentMonth[i])
+        banglaMonthFullString += banglaMonths[Integer.valueOf(temp.toString())]
+    }
+    for (i in currentYear.indices) {
+        val temp = (currentYear[i])
+        val bangleChar = banglaNumbers[Integer.valueOf(temp.toString())]
+        banglaYearFourDigit += bangleChar
+    }
+    banglaMonthDoubleDigitNumber = getBanglaNumberPrivate(currentMonth.toLong())!!
+    banglaDay = banglaDays[currentDay - 1]
+    if(banglaDateSingleDigit.length==1){
+        banglaDateDoubleDigit = banglaNumbers[0]+banglaDateSingleDigit
+    }else{
+        banglaDateDoubleDigit = banglaDateSingleDigit
+    }
+    if(banglaMonthSingleCharNumber?.length==1){
+        banglaMonthTwoCharString = banglaNumbers[0]+banglaMonthSingleCharNumber
+    }else if(banglaMonthSingleCharNumber?.length==2){
+        banglaMonthTwoCharString = banglaMonthSingleCharNumber
+    }
+
+    val arreyedFormat = formatExtractor(format)
+    if (arreyedFormat != null) {
         for (i in arreyedFormat){
             when(i.substring(0, 1)){
                 "y" -> {
@@ -294,27 +299,27 @@ class BanglaDate {
                         "dd" -> finalDate += banglaDateDoubleDigit
                     }
                 }
-                "G" ->  finalDate += "খ্রিষ্টাব্দ"
-                "E" ->  finalDate += "ইং"
-                "EE" ->  finalDate += "ইংরেজী"
-                "H","K","h","k"->{
+                "G" -> finalDate += "খ্রিষ্টাব্দ"
+                "E" -> finalDate += "ইং"
+                "EE" -> finalDate += "ইংরেজী"
+                "H", "K", "h", "k" -> {
                     var hour24hrsLong = ""
                     var hour12hrsLong = ""
                     var hour24hrsLongPlusOne = ""
                     var hour12hrsLongPlusOne = ""
-                    if(hour24hrs?.length==1){
-                        hour24hrsLong = banglaNumbers[0]+hour24hrs
+                    if (hour24hrs?.length == 1) {
+                        hour24hrsLong = banglaNumbers[0] + hour24hrs
                     }
-                    if(hour12hrs?.length==1){
-                        hour12hrsLong = banglaNumbers[0]+hour12hrs
+                    if (hour12hrs?.length == 1) {
+                        hour12hrsLong = banglaNumbers[0] + hour12hrs
                     }
-                    if(hour24hrsPlusOne?.length==1){
-                        hour24hrsLongPlusOne = banglaNumbers[0]+hour24hrsPlusOne
+                    if (hour24hrsPlusOne?.length == 1) {
+                        hour24hrsLongPlusOne = banglaNumbers[0] + hour24hrsPlusOne
                     }
-                    if(hour12hrsPlusOne?.length==1){
-                        hour12hrsLongPlusOne = banglaNumbers[0]+hour12hrsPlusOne
+                    if (hour12hrsPlusOne?.length == 1) {
+                        hour12hrsLongPlusOne = banglaNumbers[0] + hour12hrsPlusOne
                     }
-                    when(i){
+                    when (i) {
                         "H" -> finalDate += hour24hrs
                         "k" -> finalDate += hour24hrsPlusOne
                         "K" -> finalDate += hour12hrs
@@ -329,10 +334,10 @@ class BanglaDate {
                     when (i) {
                         "m" -> finalDate += minutes
                         "mm" -> {
-                            if(minutes?.length==1){
-                                finalDate += banglaNumbers[0]+minutes
-                            }else{
-                                finalDate+= minutes
+                            if (minutes?.length == 1) {
+                                finalDate += banglaNumbers[0] + minutes
+                            } else {
+                                finalDate += minutes
                             }
                         }
                     }
@@ -341,33 +346,33 @@ class BanglaDate {
                     when (i) {
                         "s" -> finalDate += seconds
                         "ss" -> {
-                            if(seconds?.length==1){
-                                finalDate += banglaNumbers[0]+seconds
-                            }else{
-                                finalDate+= seconds
+                            if (seconds?.length == 1) {
+                                finalDate += banglaNumbers[0] + seconds
+                            } else {
+                                finalDate += seconds
                             }
                         }
                     }
                 }
                 "S" -> {
                     when (i) {
-                        "S" -> finalDate += miliSeconds?.substring(0,1)
+                        "S" -> finalDate += miliSeconds?.substring(0, 1)
                         "SS" -> {
-                            if(seconds?.length==3){
-                                finalDate += miliSeconds?.substring(0,2)
-                            }else if(seconds?.length==1){
-                                finalDate+= banglaNumbers[0] + miliSeconds
-                            } else{
+                            if (seconds?.length == 3) {
+                                finalDate += miliSeconds?.substring(0, 2)
+                            } else if (seconds?.length == 1) {
+                                finalDate += banglaNumbers[0] + miliSeconds
+                            } else {
                                 finalDate += miliSeconds
                             }
                         }
                         "SSS" -> {
-                            if(seconds?.length==1){
-                                finalDate += banglaNumbers[0]+banglaNumbers[0]+miliSeconds
-                            }else if(seconds?.length==2){
-                                finalDate+= banglaNumbers[0]+miliSeconds
-                            }else{
-                                finalDate+= miliSeconds
+                            if (seconds?.length == 1) {
+                                finalDate += banglaNumbers[0] + banglaNumbers[0] + miliSeconds
+                            } else if (seconds?.length == 2) {
+                                finalDate += banglaNumbers[0] + miliSeconds
+                            } else {
+                                finalDate += miliSeconds
                             }
                         }
                     }
@@ -375,8 +380,9 @@ class BanglaDate {
                 else ->finalDate += i
             }
         }
-        return finalDate
     }
+    return finalDate
+}
     private fun getBanglaNumberPrivate(inputedNumber: Long): String? {
         var banglaSting = ""
         try {
@@ -394,3 +400,4 @@ class BanglaDate {
         }
         return banglaSting
     }
+    private fun formatExtractor(format: String): ArrayList<String>? { return ArrayList<String>() }
